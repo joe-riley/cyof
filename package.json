@@ -1,0 +1,26 @@
+{
+  "name": "cyof",
+  "version": "1.0.0",
+  "description": "",
+  "main": "api/server.js",
+  "scripts": {
+    "start": "if-env NODE_ENV=production && yarn run start:prod || yarn run start:dev",
+    "start:prod": "cd api && yarn start",
+    "start:dev": "concurrently \"cd api && yarn run watch\" \"cd api && yarn start\"",
+    "install": "cd api && yarn install && cd ../client && yarn install",
+    "heroku-postbuild": "cd client && yarn run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@work.github.com:joe-riley/cyof.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "if-env": "^1.0.4"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0"
+  }
+}

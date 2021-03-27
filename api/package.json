@@ -8,7 +8,7 @@
     "watch": "nodemon server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Joe Riley",
   "license": "ISC",
   "dependencies": {
     "apollo-server-express": "^2.21.2",
