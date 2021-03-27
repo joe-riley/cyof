@@ -6,7 +6,7 @@
   "scripts": {
     "start": "if-env NODE_ENV=production && yarn run start:prod || yarn run start:dev",
     "start:prod": "cd api && yarn start",
-    "start:dev": "concurrently \"cd api && yarn run watch\" \"cd api && yarn start\"",
+    "start:dev": "concurrently \"cd api && yarn run watch\" \"cd client && yarn start\"",
     "install": "cd api && yarn install && cd ../client && yarn install",
     "heroku-postbuild": "cd client && yarn run build"
   },
