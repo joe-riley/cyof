@@ -21,7 +21,6 @@ module.exports = {
       req.user = data;
     } catch (err) {
       console.log(`Token Error: ${err}`);
-      
     }
 
     return req

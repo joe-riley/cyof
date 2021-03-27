@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User } = require('../models');
+const { User, Workout } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -41,6 +41,21 @@ const resolvers = {
 
       return { token, user };
     },
+
+    saveWorkout: async (parent, { input }, { user }) => {
+      if (user) {
+        console.log('ho')
+        const updatedUser = await User.findByIdAndUpdate(
+          { _id: user._id },
+          { $addToSet: { savedWorkouts: input }},
+          { new: true, runValidators: true }
+        );
+
+        return updatedUser;
+      }
+
+      throw new AuthenticationError('You must be logged in to create a workout.');
+    }
   },
 };
 
