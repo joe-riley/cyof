@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
     "engines": {
-    "node": "14.x"
+    "node": "14.15.5"
   },
   "main": "api/server.js",
   "scripts": {
@@ -30,6 +30,7 @@
   "workspaces": [
     "api",
     "client"
-  ]
+  ],
+  "private": true
 
 }
