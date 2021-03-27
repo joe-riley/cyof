@@ -7,10 +7,51 @@
   pointer-events: none;
 }
 
+.carousel-caption {
+  top: 0;
+  bottom: auto;
+}
+
+.carousel-caption > h3 {
+  font-size: 8rem;
+  --interval: 1s;
+  display: block;
+  text-shadow: 
+    0 0 10px azure,
+    0 0 20px aqua,
+    0 0 40px dodgerblue,
+    0 0 80px blue;
+  will-change: filter, color;
+  filter: saturate(60%);
+  animation: flicker steps(100) var(--interval) 1s infinite;;
+}
+
+.carousel-caption > p {
+  font-size: 2rem;
+  --interval: 1s;
+  display: block;
+  text-shadow: 
+    0 0 10px azure,
+    0 0 20px aqua,
+    0 0 40px dodgerblue,
+    0 0 80px blue;
+  will-change: filter, color;
+  filter: saturate(60%);
+  animation: flicker steps(100) var(--interval) 1s infinite;;
+}
+
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+}
+
+@media only screen and (max-width: 640px) {
+  .carousel-caption > h3 {
+    font-size: 3.2rem;
   }
+
+  .carousel-caption > p {
+    font-size: 2rem;
+  }
+
 }
 
 .App-header {
@@ -28,11 +69,3 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
