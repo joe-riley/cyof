@@ -92,6 +92,10 @@
   color: grey;
 }
 
+.card {
+  color: black;
+}
+
 @media (prefers-reduced-motion: no-preference) {
 }
 

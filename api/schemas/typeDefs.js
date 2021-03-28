@@ -14,8 +14,11 @@ const typeDefs = gql`
     username: String
     email: String
     savedWorkouts: [Workout]
+    createdAt: String
+    updatedAt: String
   }
   type Workout {
+    _id: ID
     name: String
     description: String
     links: [String]
@@ -26,6 +29,8 @@ const typeDefs = gql`
     distance: Float
     resistance: Float
     isPublic: Boolean
+    createdAt: String
+    updatedAt: String
   }
   input workoutInput {
     name: String
@@ -38,6 +43,8 @@ const typeDefs = gql`
     distance: Float
     resistance: Float
     isPublic: Boolean
+    createdAt: String 
+    updatedAt: String
   }
   type Auth {
     token: ID!

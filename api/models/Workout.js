@@ -1,6 +1,7 @@
-const { Schema, Model } = require('mongoose');
+const { Schema, model } = require('mongoose');
 
 const workoutSchema = new Schema({
+
   name: {
     type: String,
     required: true,
@@ -38,6 +39,20 @@ const workoutSchema = new Schema({
     type: Boolean,
     default: false,
   },
-});
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+  updatedAt: {
+    type: Date,
+    default: Date.now,
+  },
+},
+  { 
+    toJSON: {
+      virtuals: true,
+    }
+  }
+);
 
 module.exports = workoutSchema;

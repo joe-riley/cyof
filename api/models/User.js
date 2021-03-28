@@ -20,13 +20,21 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    createdAt: {
+      type: Date,
+      default: Date.now,
+    },
+    updatedAt: {
+      type: Date,
+      default: Date.now,
+    },
     savedWorkouts: [workoutSchema],
   },
   {
     toJSON: {
       virtuals: true,
     },
-  }
+  }, 
 );
 
 userSchema.pre('save', async function (next) {
